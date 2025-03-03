@@ -3,49 +3,49 @@
 // Write a PHP script that records 3 digits and prints the total of the first two digits multiplied by the third digit.
 
 
-// function recordNumbers($num1,$num2,$num3){
-//     // to convert numbers to string because func ctype_digit work with string value
-//     $num1=strval($num1);
-//     $num2=strval($num2);
-//     $num3=strval($num3);
+function recordNumbers($num1,$num2,$num3){
+    // to convert numbers to string because func ctype_digit work with string value
+    $num1=strval($num1);
+    $num2=strval($num2);
+    $num3=strval($num3);
 
 
-//     // to verfy from numbers is digital
-//     if(!ctype_digit($num1) ||!ctype_digit($num2) ||!ctype_digit($num3)){
+    // to verfy from numbers is digital
+    if(!ctype_digit($num1) ||!ctype_digit($num2) ||!ctype_digit($num3)){
 
-//         return "please enter three digital numbers";
-
-
-//     }
-
-//     $result=($num1+$num2)*$num3;
-//     echo $result; 
+        return "please enter three digital numbers";
 
 
-// }
+    }
 
-// recordNumbers("1","2","3");
-//  recordNumbers(5,6,7);
+    $result=($num1+$num2)*$num3;
+    echo $result; 
+
+
+}
+
+recordNumbers("1","2","3");
+ recordNumbers(5,6,7);
 
 // 2
 // A program that calculates the size of a box whose length and width are fixed with a value of 5 and 10 and the height is variable (size = length x width x height)
 
 
-// function calcSize($height){
+function calcSize($height){
 
-//     $length=5;
-//     $width=10;
+    $length=5;
+    $width=10;
 
-//     $result =$length*$width*$height;
+    $result =$length*$width*$height;
 
-//     echo "the size of box is ",$result;
-
-
+    echo "the size of box is ",$result;
 
 
-// }
 
-// calcSize(4);
+
+}
+
+calcSize(4);
 
 
 
@@ -57,26 +57,26 @@
 // *********************************************************************************************************************
 
 
-// function getHours($hours){
+function getHours($hours){
 
-//     // to check integer number by type of 1 becauuse it integer number
-//     if(gettype($hours)!==gettype(1)){
+    // to check integer number by type of 1 becauuse it integer number
+    if(gettype($hours)!==gettype(1)){
 
-//         echo "please enter integer number";
+        echo "please enter integer number";
 
-//         return ;
+        return ;
        
         
-//     }
+    }
 
-//     $result=($hours*60*60);
+    $result=($hours*60*60);
 
-//     echo $hours ," hours =",$result,"second";
+    echo $hours ," hours =",$result,"second";
 
-// }
+}
 
 
-// getHours(7);
+getHours(7);
 
 
 #4
@@ -86,19 +86,19 @@
 
 
 
-// function calcTriangleArea($base,$height){
+function calcTriangleArea($base,$height){
 
-//     // area of triangle 0.5*hight*base of Triangle
+    // area of triangle 0.5*hight*base of Triangle
 
-//     $area=0.5*$base*$height;
+    $area=0.5*$base*$height;
     
 
-//     echo "the hight of Triangle is (",$height," ) the base of Triangle is (",$base," ) Area of Triangle is (",$area,")";
+    echo "the hight of Triangle is (",$height," ) the base of Triangle is (",$base," ) Area of Triangle is (",$area,")";
 
-// }
+}
 
 
-// calcTriangleArea(4,4);
+calcTriangleArea(4,4);
 
 #5
 // *********************************************************************************************************************
@@ -106,23 +106,23 @@
 // *********************************************************************************************************************
 
 
-// function getAgeDays($year){
+function getAgeDays($year){
     
-//     if(!is_int($year)|| $year<0){
+    if(!is_int($year)|| $year<0){
 
-//         echo "the number is not integar number of is negative number";
+        echo "the number is not integar number of is negative number";
 
-//         return;
-//      }
+        return;
+     }
 
 
-//     $days=($year*365);
-//     echo "The Age in year is ",$year," years The Age in days is ",$days," days";
+    $days=($year*365);
+    echo "The Age in year is ",$year," years The Age in days is ",$days," days";
 
    
-// }
+}
 
-// getAgeDays(5);
+getAgeDays(5);
 
 #6
 // *********************************************************************************************************************
@@ -136,159 +136,159 @@
 
 // #6
 
-// // to get the length
+// to get the length
 
-// echo "the length is ",strlen($target),"<hr>";
+echo "the length is ",strlen($target),"<hr>";
 
-// // Get the length of this sentence without spaces.  
+// Get the length of this sentence without spaces.  
 
-// echo  "the length without spaces ",strlen(str_replace(" ","",$target)),"<hr>";
+echo  "the length without spaces ",strlen(str_replace(" ","",$target)),"<hr>";
 
-// // Get the number of words in this sentence. 
+// Get the number of words in this sentence. 
 
-// echo "the number of word is ",str_word_count($target),"<hr>";
+echo "the number of word is ",str_word_count($target),"<hr>";
 
-// // Check if this word (by) exists in the string or not.
-
-
-// if(strpos($target,"by")){
-
-//     echo "the word by found","<hr>";
-// }else{
-
-//     echo "the word by not found","<hr>";
-// }
+// Check if this word (by) exists in the string or not.
 
 
-// // Get the word (EraaSoft) from the string and print it.
+if(strpos($target,"by")){
+
+    echo "the word by found","<hr>";
+}else{
+
+    echo "the word by not found","<hr>";
+}
 
 
-// print_r (explode(" ",$target)[0]);
-
-// echo "<hr>";
-// echo strtok($target," ");
-// echo "<hr>";
+// Get the word (EraaSoft) from the string and print it.
 
 
-// // Remove the word (by) from the string and print the string with and without (by)
+print_r (explode(" ",$target)[0]);
 
-// echo str_replace("by"," ",$target),"<hr>";
+echo "<hr>";
+echo strtok($target," ");
+echo "<hr>";
+
+
+// Remove the word (by) from the string and print the string with and without (by)
+
+echo str_replace("by"," ",$target),"<hr>";
 
 
 // Make a new variable called (Full_string) that concatenate string_one and string_two
 
 #12
-// $string_one = "Eraa";
-// $string_two = "Soft";
+$string_one = "Eraa";
+$string_two = "Soft";
 
-// $Full_string=$string_one.$string_two;
+$Full_string=$string_one.$string_two;
 
-// echo $Full_string,"<hr>";
+echo $Full_string,"<hr>";
 #13
 
-// if(strcmp($Full_string,"EraaSoft")===0){
+if(strcmp($Full_string,"EraaSoft")===0){
 
-//     echo "var ",$Full_string," = ","EraaSoft <hr>";
-// }else{
+    echo "var ",$Full_string," = ","EraaSoft <hr>";
+}else{
 
-//     echo "var ",$Full_string," is not equal ","EraaSoft <hr>";
-// }
+    echo "var ",$Full_string," is not equal ","EraaSoft <hr>";
+}
 
 #14
 
 
-// $value="ErraSoft";
+$value="ErraSoft";
 
-// $arry=str_split($value,2);
+$arry=str_split($value,2);
 
-// echo implode("/",$arry),"<hr>";
+echo implode("/",$arry),"<hr>";
 
-// // another way
+// another way
 
-// echo chunk_split($value,2,"/");
+echo chunk_split($value,2,"/");
 
 //   Write a PHP script that stores the number as a variable and checks if it is odd or even.
 
 #15
 
 
-// function getNumber($num){
-//     $evenArry=[];
-//     $oddArry=[];
-//     if($num%2===0){
-//         echo "the number ",$num," is even";
-//     $evenArry[0]=[$num];
+function getNumber($num){
+    $evenArry=[];
+    $oddArry=[];
+    if($num%2===0){
+        echo "the number ",$num," is even";
+    $evenArry[0]=[$num];
     
 
 
-//     }else{
+    }else{
 
-//         echo " the number ",$num," is odd";
-//         $oddArry[0]=[$num];
-//     }
+        echo " the number ",$num," is odd";
+        $oddArry[0]=[$num];
+    }
 
 
-// }
+}
 
-// getNumber(5);
+getNumber(5);
 
 // #16
 
-// function getWord($word){
-//     if(gettype($word)!=gettype(" ")){
-//         echo " please enter string value";
-//     }
-//     $length=strlen($word);
-//     //  this function from qestion #15
-//     getNumber($length);
+function getWord($word){
+    if(gettype($word)!=gettype(" ")){
+        echo " please enter string value";
+    }
+    $length=strlen($word);
+    //  this function from qestion #15
+    getNumber($length);
 
-// }
+}
 
-// echo "<hr>";
-// getWord("mostafa");
+echo "<hr>";
+getWord("mostafa");
 
 
 
 #17
 
-// function checkWord($word){
+function checkWord($word){
 
-//     if($word=="gain" || $word=="peen "){
+    if($word=="gain" || $word=="peen "){
 
-//         echo "success word";
-//     }else{
+        echo "success word";
+    }else{
 
-//         echo "wrong word";
+        echo "wrong word";
 
-//     }
-// }
+    }
+}
 
-// checkWord("gain");
+checkWord("gain");
 
 #18
 
 //  A Boolean is a data type that has only two values true or false. These values often correspond to 1 (true) or 0 (false). When a 1 or a 0 is used, it's called an int Boolean. Write a PHP script that stores an int Boolean and outputs its opposite
 
-// function reversBoolen($num){
+function reversBoolen($num){
 
-//     if(gettype($num)!==gettype(1)){
+    if(gettype($num)!==gettype(1)){
         
-//         echo "please enter boolean number";
+        echo "please enter boolean number";
 
-//         return;
-//     }
+        return;
+    }
 
-//     if($num===0){
+    if($num===0){
 
-//         echo "the revers value is 1 <hr>";
-//     }if($num===1){
-//         echo "the revers value is 0 <hr>";
-//     }else{
-//         echo "not boolean value";
-//     }
-// }
+        echo "the revers value is 1 <hr>";
+    }if($num===1){
+        echo "the revers value is 0 <hr>";
+    }else{
+        echo "not boolean value";
+    }
+}
 
-// reversBoolen(1);
+reversBoolen(1);
 
 
 #19
@@ -296,22 +296,22 @@
 // Write a PHP script that stores a word and determines Is the Word is Singular or Plural? (A plural word is one that ends in "s".)
 // ***************************************************************************************************************************************
 
-// function checkSingular ($word){
+function checkSingular ($word){
 
-//     if(gettype($word)===gettype(" ")){
-//         if(!strtolower(substr($word,-1))!=="s"){
+    if(gettype($word)===gettype(" ")){
+        if(!strtolower(substr($word,-1))!=="s"){
 
-//             echo "the word not end with 's' so this word is Singular";
+            echo "the word not end with 's' so this word is Singular";
     
-//         }else{
-//             echo "the word  end with 's' so this word is a plural";
-//         }
-//     }else{
-//         echo "please enter string value";
+        }else{
+            echo "the word  end with 's' so this word is a plural";
+        }
+    }else{
+        echo "please enter string value";
 
-//     }
-// }
-// checkSingular(1);
+    }
+}
+checkSingular(1);
 
 #20
 // ******************************************************************************************************************************************
