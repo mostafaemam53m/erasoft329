@@ -1,0 +1,69 @@
+
+# SQL Basics: Joins, Keys, and Relationships
+
+##  1. JOINS in SQL
+
+**JOINS** في SQL تُستخدم لربط صفوف من جدولين أو أكثر، بناءً على علاقة منطقية بين الأعمدة. تُساعدنا الـ Joins على استخراج بيانات مترابطة من جداول مختلفة في قاعدة البيانات.
+
+### الأنواع الأساسية للـ JOINS:
+- **INNER JOIN**: يُعيد فقط الصفوف التي لها تطابق في كلا الجدولين.
+- **LEFT JOIN (or LEFT OUTER JOIN)**: يُعيد كل الصفوف من الجدول الأيسر، والصفوف المطابقة من الجدول الأيمن (إن وُجدت).
+- **RIGHT JOIN (or RIGHT OUTER JOIN)**: يُعيد كل الصفوف من الجدول الأيمن، والصفوف المطابقة من الجدول الأيسر.
+- **FULL JOIN (or FULL OUTER JOIN)**: يُعيد كل الصفوف عندما يكون هناك تطابق في أحد الجدولين أو كليهما.
+
+### مثال توضيحي:
+```sql
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments
+ON Employees.DepartmentID = Departments.ID;
+```
+
+---
+
+##  2. Difference Between Primary Key and Unique Key
+
+| Feature         | Primary Key         | Unique Key          |
+|----------------|---------------------|---------------------|
+| Uniqueness      | يجب أن يكون فريدًا  | يجب أن يكون فريدًا  |
+| Null Values     | لا يقبل قيم NULL    | يقبل قيمة NULL واحدة |
+| Table Limitation| جدول واحد فقط        | ممكن أكثر من مفتاح  |
+| Purpose         | لتعريف كل سجل        | لضمان التفرّد       |
+
+### مثال:
+```sql
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Email VARCHAR(100) UNIQUE
+);
+```
+
+---
+
+##  3. What is Foreign Key in RDBMS
+
+**Foreign Key (المفتاح الخارجي)** هو عمود أو مجموعة أعمدة تُستخدم لربط جدول بآخر. المفتاح الخارجي يُشير إلى المفتاح الأساسي في جدول آخر. الهدف منه هو الحفاظ على **تكامل البيانات** بين الجداول.
+
+### خصائص المفتاح الخارجي:
+- يربط بين جدولين.
+- يُمكن أن يقبل قيمًا مكررة.
+- يُمكن أن يقبل قيم NULL.
+- يمنع حذف أو تعديل السجلات المرتبطة.
+
+### مثال:
+```sql
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+```
+
+---
+
+##  Summary in Simple Words:
+
+- **JOINS** = لربط البيانات من جداول مختلفة.
+- **Primary Key** = يحدد هوية السجل ويجب أن يكون فريدًا ولا يقبل NULL.
+- **Unique Key** = يضمن التفرّد، لكنه يقبل NULL.
+- **Foreign Key** = يربط بين الجداول ويحافظ على العلاقات بينها.
