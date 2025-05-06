@@ -1,0 +1,41 @@
+في برمجة كائنية التوجه (OOP) في PHP، Magic Methods (الطرق السحرية) هي مجموعة من الدوال تبدأ بشرطتين سفليتين __ وتُنفذ تلقائيًا بواسطة PHP عند حدوث أحداث معينة داخل الكائنات. تُستخدم هذه الطرق لتوفير سلوك مخصص للكائنات في مواقف خاصة، مثل إنشاء الكائن، تحويله إلى سلسلة نصية، استدعاء خصائص غير موجودة، إلخ.
+
+
+
+PHP Magic Methods (OOP) - Summary:
+
+1. __construct()  
+   - Called when an object is created.
+
+2. __destruct()  
+   - Called when an object is destroyed.
+
+3. __get($name)  
+   - Triggered when reading inaccessible or undefined properties.
+
+4. __set($name, $value)  
+   - Triggered when writing to inaccessible or undefined properties.
+
+5. __isset($name)  
+   - Triggered by isset() or empty() on inaccessible properties.
+
+6. __unset($name)  
+   - Triggered by unset() on inaccessible properties.
+
+7. __call($name, $arguments)  
+   - Triggered when invoking inaccessible or undefined object methods.
+
+8. __callStatic($name, $arguments)  
+   - Triggered when invoking inaccessible or undefined static methods.
+
+9. __toString()  
+   - Called when an object is treated as a string (e.g., echo $obj).
+
+10. __invoke($args)  
+    - Called when an object is used as a function.
+
+11. __clone()  
+    - Called when an object is cloned with clone.
+
+12. __debugInfo()  
+    - Controls what is shown when using var_dump() on an object.
